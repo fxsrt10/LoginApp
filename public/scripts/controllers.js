@@ -13,15 +13,15 @@ angular.module('customLoginApp')
         $scope.login = function(){
             postdata = {"op":"cred_submit","credentials": {"authFactor": "USERNAME_PASSWORD", "username": 'chris.sayles@oracle.com',"password": $scope.password, "credType" : "USERNAME_PASSWORD", "scenario" : "/sso/v1/user/login"}};
             // 'Content-Type': 'application/json', 
-            postheaders = {'Authorization': 'Bearer ' + $scope.apitoken, 'Access-Control-Allow-Credentials' : 'true'};
+            postheaders = {'Authorization': 'Bearer ' + $scope.apitoken};
             postheaders2 = {'Access-Control-Allow-Credentials' : ''};
             
             $http({
               method: 'POST',
               url: 'https://idcs-0c85cc563ce74338a8a0f6a6a2ed5bbd.identity.oraclecloud.com/sso/v1/user/secure/login',
               data: postdata,
-              headers: postheaders,
-              withCredentials: true
+              headers: postheaders
+              // withCredentials: true
             }).then(function(response) {
                  data = response.data;
                  console.log(response.data)
