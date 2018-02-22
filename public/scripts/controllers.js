@@ -14,7 +14,7 @@ angular.module('customLoginApp')
             postdata = {"op":"cred_submit","credentials": {"authFactor": "USERNAME_PASSWORD", "username": 'chris.sayles@oracle.com',"password": $scope.password, "credType" : "USERNAME_PASSWORD", "scenario" : "/sso/v1/user/login"}};
             // 'Content-Type': 'application/json', 
             postheaders = {'Authorization': 'Bearer ' + $scope.apitoken, 'Access-Control-Allow-Credentials' : 'true'};
-            postheaders2 = {'Access-Control-Allow-Credentials' : 'true'};
+            postheaders2 = {'Access-Control-Allow-Credentials' : ''};
             
             $http({
               method: 'POST',
@@ -37,6 +37,7 @@ angular.module('customLoginApp')
                           method: 'POST',
                           url: data.redirectUrl,
                           data: payload,
+                          headers: postheaders2
                           // crossDomain: true,
                           // withCredentials: true
                         }).then(function(response2) {
