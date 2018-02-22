@@ -15,6 +15,7 @@ angular.module('customLoginApp')
             postdata = {"op":"cred_submit","credentials": {"authFactor": "USERNAME_PASSWORD", "username": $scope.username,"password": $scope.password, "credType" : "USERNAME_PASSWORD", "scenario" : "/sso/v1/user/login"}};
             
             postheaders = {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + $scope.apitoken, 'Access-Control-Allow-Origin' : '*', 'Access-Control-Allow-Headers' : 'Origin,X-Requested-With,Content-Type,Accept,Authorization', 'Access-Control-Allow-Credentials' : 'true'};
+            postheaders2 = {'Access-Control-Allow-Credentials' : 'true'};
             
             $http({
               method: 'POST',
@@ -26,14 +27,20 @@ angular.module('customLoginApp')
                  data = response.data;
                  console.log(response.data)
                  if(data.nextOp == "postRedirect2"){
-                    payload = {"state":data.postParams.state, "X-HOST-IDENTIFIER-NAME":data.postParams["X-HOST-IDENTIFIER-NAME"], "id_token":data.postParams.id_token, "IDCS_CG_ENC":data.postParams["IDCS_CG_ENC"]};
+                    payload = {
+                        "state":data.postParams.state, 
+                        "X-HOST-IDENTIFIER-NAME":data.postParams["X-HOST-IDENTIFIER-NAME"], 
+                        "id_token":data.postParams.id_token, 
+                        "IDCS_CG_ENC":data.postParams["IDCS_CG_ENC"]
+                    };
                      console.log(payload);
                         $http({
                           method: 'POST',
                           url: data.redirectUrl,
                           data: payload,
                           crossDomain: true,
-                          withCredentials: true
+                          withCredentials: true,
+                          headers: = postheaders2
                         }).then(function(response2) {
                              console.log(response2);
                         }, function(error2) {
