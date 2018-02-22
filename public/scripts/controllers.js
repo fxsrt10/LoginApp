@@ -64,7 +64,8 @@ angular.module('customLoginApp')
                                         crossDomain: true,
                                         headers: {
                                             'Authorization':'Bearer ' + $scope.apitoken,
-                                            'Access-Control-Allow-Origin' : '*'
+                                            'Access-Control-Allow-Origin' : '*',
+                                            'Access-Control-Allow-Headers' : 'Origin,X-Requested-With,Content-Type,Accept,Authorization'
                                         }
                 }).done(function(msg) {
                                         atToken = msg.authenticationToken;
