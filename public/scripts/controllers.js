@@ -53,6 +53,7 @@ angular.module('customLoginApp')
                 var postdata = {"op":"cred_submit","credentials": {"authFactor": "USERNAME_PASSWORD", "username": $scope.username,"password": $scope.password, "credType" : "USERNAME_PASSWORD", "scenario" : "/sso/v1/user/login"}};            
                 $.ajax({
                     type: "POST",
+                    crossDomain: true,
                     url: 'https://idcs-0c85cc563ce74338a8a0f6a6a2ed5bbd.identity.oraclecloud.com/sso/v1/user/secure/login',
                     data: postdata,
                     contentType: "application/json",
@@ -62,7 +63,8 @@ angular.module('customLoginApp')
                                         },
                                         crossDomain: true,
                                         headers: {
-                                            'Authorization':'Bearer ' + $scope.apitoken
+                                            'Authorization':'Bearer ' + $scope.apitoken,
+                                            'Access-Control-Allow-Origin' : '*'
                                         }
                 }).done(function(msg) {
                                         atToken = msg.authenticationToken;
