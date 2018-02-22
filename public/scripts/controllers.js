@@ -65,7 +65,8 @@ angular.module('customLoginApp')
                                         headers: {
                                             'Authorization':'Bearer ' + $scope.apitoken,
                                             'Access-Control-Allow-Origin' : '*',
-                                            'Access-Control-Allow-Headers' : 'Origin,X-Requested-With,Content-Type,Accept,Authorization'
+                                            'Access-Control-Allow-Headers' : 'Origin,X-Requested-With,Content-Type,Accept,Authorization',
+                                            'Access-Control-Allow-Credentials' : 'true'
                                         }
                 }).done(function(msg) {
                                         atToken = msg.authenticationToken;
