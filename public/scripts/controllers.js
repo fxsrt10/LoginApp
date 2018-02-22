@@ -38,8 +38,8 @@ angular.module('customLoginApp')
                           url: data.redirectUrl,
                           data: payload,
                           // crossDomain: true,
-                          // withCredentials: true,
-                          headers: postheaders2
+                          withCredentials: true,
+                          // headers: postheaders2
                         }).then(function(response2) {
                              console.log(response2);
                         }, function(error2) {
