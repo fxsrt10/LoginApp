@@ -1,0 +1,225 @@
+.row-header {
+  margin: 0px auto;
+  padding: 0px 0px;
+}
+.row-content {
+  margin: 0px auto;
+  padding: 50px 0px;
+  border-bottom: 1px ridge;
+  min-height: 400px;
+}
+.row-footer {
+  margin: 0px auto;
+  padding: 20px 0px;
+  background-color: #AfAfAf;
+}
+.jumbotron {
+  margin: 0px auto;
+  background: #199ada;
+}
+.carousel {
+  background: #1a237e;
+}
+.carousel .item {
+  height: 300px;
+}
+.carousel .item img {
+  left: 0;
+  min-height: 300px;
+  position: absolute;
+  top: 0;
+}
+.navbar-inverse {
+  background: #373737;
+  color: #ffffff;
+}
+.navbar-inverse .navbar-nav > .active > a {
+  background: #1a237e;
+  color: #ffffff;
+}
+.navbar-inverse .navbar-nav > .active > a:hover {
+  background: #1a237e;
+  color: #ffffff;
+}
+.navbar-inverse .navbar-nav > .active > a:focus {
+  background: #1a237e;
+  color: #ffffff;
+}
+.navbar-inverse .navbar-nav > .open > a {
+  background: #1a237e;
+  color: #ffffff;
+}
+.navbar-inverse .navbar-nav > .open > a:hover {
+  background: #1a237e;
+  color: #ffffff;
+}
+.navbar-inverse .navbar-nav > .open > a:focus {
+  background: #1a237e;
+  color: #ffffff;
+}
+.navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
+  background-color: #303f9f;
+  color: #eeeeee;
+}
+.navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover {
+  color: #000000;
+}
+.navbar-inverse .navbar-nav .open .dropdown-menu {
+  background-color: #303f9f;
+  color: #eeeeee;
+}
+address {
+  color: #0f0f0f;
+  font-size: 80%;
+  margin: 0px;
+}
+body {
+  align: center;
+  padding: 50px 0px 0px 0px;
+  z-index: 0;
+}
+.tab-content {
+  border-bottom: 1px solid #dddddd;
+  border-left: 1px solid #dddddd;
+  border-right: 1px solid #dddddd;
+  padding: 10px;
+}
+.affix {
+  top: 100px;
+}
+#carouselButtons {
+  bottom: 0px;
+  position: absolute;
+  right: 0px;
+}
+
+/* numbered buttons */
+#status-buttons                 {  }
+#status-buttons a               { color:#000; display:inline-block; font-size:12px; margin-right:10px; text-align:center; text-transform:uppercase; }
+#status-buttons a:hover         { text-decoration:none; }
+
+/* we will style the span as the circled number */
+#status-buttons span            { color:#FFF; background:#080808; display:block; height:30px; margin:0 auto 10px; padding-top:5px; width:30px; 
+    border-radius:50%; }
+
+/* active buttons turn light green-blue*/
+#status-buttons a.active span   { background:#00BC8C; }
+
+.grid {
+  width: 1000px;
+  height: 400px;
+}
+
+/* REGISTRATION CSS */
+/*body {
+    min-height:100%;
+    background-color: #263238;
+}*/
+
+.text-center{
+  text-align: center;
+}
+
+.space-bot{
+  margin-bottom: 35px;
+}
+
+.space-top{
+  margin-top: 35px;
+}
+
+/* Title */
+
+h1 {
+    color: white;
+    font-family: 'Roboto';
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 25px;
+    text-align: center;
+}
+
+/* Sign Up */
+
+/*.container {
+    max-width: 400px;
+    max-height: 100px;
+    margin-top: 10px;
+}
+*/
+.alert-danger{
+  text-align: center;
+}
+
+.signup-screen {
+    padding: 20px;
+    margin-top: 100px;
+    padding-bottom: 40px;
+    border-radius: 5px;
+    background-color: #199ada;
+    box-shadow: 0 1px 6px rgba(0,0,0,.3);
+    color: white;
+}
+
+.btn{
+  border-radius: 2px;
+}
+
+.cancel{
+  background-color: #df405a;
+}
+
+.done{
+  background-color: #5CAB7D;
+}
+
+.done:hover{
+  background-color: #6dc793;
+}
+
+.done:focus{
+  background-color: #6dc793;
+}
+
+.cancel:hover{
+  background-color: #f0435f;
+}
+
+.cancel:focus{
+  background-color: #f0435f;
+}
+
+.input-group {
+    width:100%;
+}
+
+.input-group .ng-invalid {
+    border: 2px solid #e74c3c;
+    border-radius: 3px;
+}
+
+
+/* Error Box */
+
+.alert{
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  border-color: #e85a71;
+  background-color:  #e85a71;
+  color: white;
+  
+}
+
+.help-block {
+    font-size: 12px;
+    color: white
+}
+
+input {
+    line-height: normal;
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+}
