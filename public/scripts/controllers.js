@@ -11,10 +11,9 @@ angular.module('customLoginApp')
                 });
         
         $scope.login = function(){
-            alert($scope.apitoken);
             postdata = {"op":"cred_submit","credentials": {"authFactor": "USERNAME_PASSWORD", "username": $scope.username,"password": $scope.password, "credType" : "USERNAME_PASSWORD", "scenario" : "/sso/v1/user/login"}};
-            
-            postheaders = {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + $scope.apitoken, 'Access-Control-Allow-Origin' : '*', 'Access-Control-Allow-Headers' : 'Origin,X-Requested-With,Content-Type,Accept,Authorization', 'Access-Control-Allow-Credentials' : 'true'};
+            // 'Content-Type': 'application/json', 
+            postheaders = {'Authorization': 'Bearer ' + $scope.apitoken, 'Access-Control-Allow-Credentials' : 'true'};
             postheaders2 = {'Access-Control-Allow-Credentials' : 'true'};
             
             $http({
@@ -22,7 +21,7 @@ angular.module('customLoginApp')
               url: 'https://idcs-0c85cc563ce74338a8a0f6a6a2ed5bbd.identity.oraclecloud.com/sso/v1/user/secure/login',
               data: postdata,
               headers: postheaders,
-              withCredentials: true
+              // withCredentials: true
             }).then(function(response) {
                  data = response.data;
                  console.log(response.data)
@@ -38,8 +37,9 @@ angular.module('customLoginApp')
                           method: 'POST',
                           url: data.redirectUrl,
                           data: payload,
-                          crossDomain: true,
-                          headers: postheaders2
+                          // crossDomain: true,
+                          // withCredentials: true,
+                          // headers: postheaders2
                         }).then(function(response2) {
                              console.log(response2);
                         }, function(error2) {
